@@ -24,7 +24,7 @@
             let requestOptions = new RequestOptions( {headers : headers} );
 
             let resp : Observable<ISearchResult[]> = this._http.get(this._searchUrl + q, requestOptions)
-            .map((response: Response) => <ISearchResult[]>response.json());
+            .map((response: Response) => <ISearchResult[]>response.json().value);
 
             return resp;
                

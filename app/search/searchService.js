@@ -22,7 +22,7 @@ var searchService = (function () {
         headers.append('Access-Control-Allow-Origin', '*');
         var requestOptions = new http_1.RequestOptions({ headers: headers });
         var resp = this._http.get(this._searchUrl + q, requestOptions)
-            .map(function (response) { return response.json(); });
+            .map(function (response) { return response.json().value; });
         return resp;
     };
     searchService = __decorate([
