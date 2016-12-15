@@ -12,8 +12,8 @@ import { searchResults } from './search/searchResults.component'
     BrowserModule,
     HttpModule  
    ],
-  declarations: [ AppComponent ],
-  bootstrap:    [ AppComponent, searchResults ]
+  declarations: [ AppComponent, searchResults ],
+  bootstrap:    [ AppComponent ]
 })
 export class AppModule { 
   
