@@ -12,6 +12,7 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var http_1 = require('@angular/http');
 var app_component_1 = require('./app.component');
+var searchResults_component_1 = require('./search/searchResults.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -22,7 +23,7 @@ var AppModule = (function () {
                 http_1.HttpModule
             ],
             declarations: [app_component_1.AppComponent],
-            bootstrap: [app_component_1.AppComponent]
+            bootstrap: [app_component_1.AppComponent, searchResults_component_1.searchResults]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);
