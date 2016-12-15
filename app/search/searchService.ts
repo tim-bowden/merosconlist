@@ -19,6 +19,7 @@
             var headers : Headers = new Headers();
 
             headers.append('api-key', '852613E36B77EB7E14B9D40E4FB46CF9');
+            headers.append('Access-Control-Allow-Origin', '*');
 
             let resp : Observable<ISearchResult[]> = this._http.get(this._searchUrl + q, headers)
             .map((response: Response) => <ISearchResult[]>response.json());
