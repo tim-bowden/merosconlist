@@ -17,7 +17,11 @@ var searchService = (function () {
         this._searchUrl = 'https://merosconlist.search.windows.net/indexes/conlistidx/docs?api-version=2015-02-28&search=';
     }
     searchService.prototype.getResults = function (q) {
-        return [];
+        var headers = new http_1.Headers();
+        headers.append('api-key', '852613E36B77EB7E14B9D40E4FB46CF9');
+        var resp = this._http.get(this._searchUrl + q, headers)
+            .map(function (response) { return response.json(); });
+        return resp;
     };
     searchService = __decorate([
         core_1.Injectable(), 

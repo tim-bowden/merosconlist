@@ -1,5 +1,5 @@
  import { Injectable } from '@angular/core';
- import { Http, Response } from '@angular/http';
+ import { Http, Response, Headers } from '@angular/http';
  import { Observable } from 'rxjs/Observable';
  import 'rxjs/add/operator/map';
 
@@ -14,9 +14,17 @@
 
      }
 
-     getResults(q : string) : ISearchResult[] {
+     public getResults(q : string) : Observable<ISearchResult[]> {
             
-            return [];
+            var headers : Headers = new Headers();
+
+            headers.append('api-key', '852613E36B77EB7E14B9D40E4FB46CF9');
+
+            let resp : Observable<ISearchResult[]> = this._http.get(this._searchUrl + q, headers)
+            .map((response: Response) => <ISearchResult[]>response.json());
+
+            return resp;
+               
 
      }
 

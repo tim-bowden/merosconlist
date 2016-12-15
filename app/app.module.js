@@ -12,20 +12,9 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var http_1 = require('@angular/http');
 var app_component_1 = require('./app.component');
-var searchService_1 = require('./search/searchService');
 var AppModule = (function () {
-    function AppModule(_searchService) {
-        this._searchService = _searchService;
+    function AppModule() {
     }
-    AppModule.prototype.ngOnInit = function () {
-        this._searchService.getResults('Bahrain').subscribe(this.valueReturned, this.errorReturned);
-    };
-    AppModule.prototype.valueReturned = function (value) {
-        console.log(value);
-    };
-    AppModule.prototype.errorReturned = function (err) {
-        console.log(err);
-    };
     AppModule = __decorate([
         core_1.NgModule({
             imports: [
@@ -35,7 +24,7 @@ var AppModule = (function () {
             declarations: [app_component_1.AppComponent],
             bootstrap: [app_component_1.AppComponent]
         }), 
-        __metadata('design:paramtypes', [searchService_1.searchService])
+        __metadata('design:paramtypes', [])
     ], AppModule);
     return AppModule;
 }());
