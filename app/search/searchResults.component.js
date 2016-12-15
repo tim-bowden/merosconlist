@@ -9,17 +9,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var Observable_1 = require('rxjs/Observable');
 var searchResults = (function () {
-    function searchResults(_searchResults) {
-        this._searchResults = _searchResults;
+    function searchResults() {
     }
     searchResults = __decorate([
         core_1.Component({
             selector: 'search-results',
             template: "<h1>Hello</h1>"
         }), 
-        __metadata('design:paramtypes', [Observable_1.Observable])
+        __metadata('design:paramtypes', [])
     ], searchResults);
     return searchResults;
 }());

@@ -11,8 +11,6 @@ export class searchResults{
 
     results : ISearchResult[];
 
-    constructor(private _searchResults : Observable<ISearchResult[]>){
-
-    }
+    
 
 }
