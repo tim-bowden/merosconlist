@@ -1,5 +1,5 @@
  import { Injectable } from '@angular/core';
- import { Http, Response, Headers } from '@angular/http';
+ import { Http, Response, Headers, RequestOptions } from '@angular/http';
  import { Observable } from 'rxjs/Observable';
  import 'rxjs/add/operator/map';
 
@@ -16,12 +16,14 @@
 
      public getResults(q : string) : Observable<ISearchResult[]> {
             
-            var headers : Headers = new Headers();
+            let headers : Headers = new Headers();
 
             headers.append('api-key', '852613E36B77EB7E14B9D40E4FB46CF9');
             headers.append('Access-Control-Allow-Origin', '*');
 
-            let resp : Observable<ISearchResult[]> = this._http.get(this._searchUrl + q, headers)
+            let requestOptions = new RequestOptions( {headers : headers} );
+
+            let resp : Observable<ISearchResult[]> = this._http.get(this._searchUrl + q, requestOptions)
             .map((response: Response) => <ISearchResult[]>response.json());
 
             return resp;

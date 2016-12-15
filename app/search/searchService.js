@@ -20,7 +20,8 @@ var searchService = (function () {
         var headers = new http_1.Headers();
         headers.append('api-key', '852613E36B77EB7E14B9D40E4FB46CF9');
         headers.append('Access-Control-Allow-Origin', '*');
-        var resp = this._http.get(this._searchUrl + q, headers)
+        var requestOptions = new http_1.RequestOptions({ headers: headers });
+        var resp = this._http.get(this._searchUrl + q, requestOptions)
             .map(function (response) { return response.json(); });
         return resp;
     };
