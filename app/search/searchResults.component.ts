@@ -3,7 +3,7 @@ import { ISearchResult } from '../interfaces/ISearchResult';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
-    selector : 'search-result',
+    selector : 'search-results',
     template : `<h1>Hello</h1>`
 
 })

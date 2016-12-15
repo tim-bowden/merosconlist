@@ -16,7 +16,7 @@ var searchResults = (function () {
     }
     searchResults = __decorate([
         core_1.Component({
-            selector: 'search-result',
+            selector: 'search-results',
             template: "<h1>Hello</h1>"
         }), 
         __metadata('design:paramtypes', [Observable_1.Observable])

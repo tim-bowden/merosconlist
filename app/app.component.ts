@@ -9,8 +9,7 @@ import { searchResults } from './search/searchResults.component'
   selector: 'my-app',
   template: `<h1>Con List</h1>
   <input type='text' id='searchConList' />
-  <search-result></search-result>
-  
+  <search-results></search-results>  
   `,
   providers: [searchService]
 })
