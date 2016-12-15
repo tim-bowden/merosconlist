@@ -2,12 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { searchService } from './search/searchService';
 
 import { ISearchResult } from './interfaces/ISearchResult'
+import { searchResults } from './search/searchResults.component'
 
 
 @Component({
   selector: 'my-app',
   template: `<h1>Con List</h1>
   <input type='text' id='searchConList' />
+  <search-result></search-result>
   
   `,
   providers: [searchService]
