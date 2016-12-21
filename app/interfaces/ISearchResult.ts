@@ -12,6 +12,7 @@ export interface ISearchResult{
     Address4 : string,
     Address5 : string,
     Address6 : string,
+    AliasType: string,
     Country : string,
     CountryofBirth : string,
     DOB : string,

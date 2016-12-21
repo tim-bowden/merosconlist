@@ -1,8 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { searchService } from './search/searchService';
-
-import { ISearchResult } from './interfaces/ISearchResult'
-import { searchResults } from './search/searchResults.component'
+import { Component } from '@angular/core';
 
 
 @Component({
@@ -10,28 +6,15 @@ import { searchResults } from './search/searchResults.component'
   template: `<h1>Con List</h1>
   <input type='text' id='searchConList' />
   <search-results></search-results>  
-  `,
-  providers: [searchService]
+  `,  
+  
 })
-export class AppComponent implements OnInit  { 
+export class AppComponent { 
   
   name = 'Angular'; 
 
-  constructor(private _searchService : searchService ){
+  constructor(){
     
-  }
-
-  ngOnInit(){
-      this._searchService.getResults('Bahrain').subscribe(this.valueReturned, this.errorReturned)
-  }
-
-  valueReturned(value : ISearchResult[]){
-      console.log(value);
-  }
-
-  errorReturned(err : any) {
-
-    console.log(err);
   }
 
 }

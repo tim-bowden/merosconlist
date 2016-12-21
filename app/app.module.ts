@@ -3,7 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent }  from './app.component';
-import { searchResults } from './search/searchResults.component'
+import { searchResults } from './search/searchResults.component';
+
 
 
 
@@ -13,7 +14,8 @@ import { searchResults } from './search/searchResults.component'
     HttpModule  
    ],
   declarations: [ AppComponent, searchResults ],
-  bootstrap:    [ AppComponent ]
+  bootstrap:    [ AppComponent ],
+  
 })
 export class AppModule { 
   
