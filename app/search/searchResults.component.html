@@ -10,6 +10,7 @@
 <div class="row">    
     <ul class="list-group">        
         <li class="list-group-item" *ngFor='let searchResult of results'>                    
+            <h5><strong>Group ID : {{searchResult.GroupID}}</strong></h5>
             <h5>{{searchResult.Name6}}</h5> 
             <p>{{searchResult.Name1}} {{searchResult.Name2}} {{searchResult.Name3}} {{searchResult.Name4}} {{searchResult.Name5}} </p>
 

@@ -13,10 +13,13 @@ export class searchResults implements OnInit{
 
     results : ISearchResult[];
     title : string = 'Testing Interpolation'
-    searchTerm : string = 'Bahrain'
+    searchTerm : string = ''
 
     search(){
-        this._searchService.getResults(this.searchTerm).subscribe(results => this.results = results, this.errorReturned)
+        if (this.searchTerm){
+            this._searchService.getResults(this.searchTerm).subscribe(results => this.results = results, this.errorReturned);
+        }
+        
     } 
 
     constructor(private _searchService: searchService){
