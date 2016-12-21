@@ -14,9 +14,15 @@ var searchResults = (function () {
     function searchResults(_searchService) {
         this._searchService = _searchService;
         this.title = 'Testing Interpolation';
+        this.searchTerm = 'Bahrain';
     }
+    searchResults.prototype.search = function () {
+        var _this = this;
+        this._searchService.getResults(this.searchTerm).subscribe(function (results) { return _this.results = results; }, this.errorReturned);
+    };
     searchResults.prototype.ngOnInit = function () {
-        this._searchService.getResults('Bahrain').subscribe(this.valueReturned, this.errorReturned);
+        var _this = this;
+        this._searchService.getResults(this.searchTerm).subscribe(function (results) { return _this.results = results; }, this.errorReturned);
     };
     searchResults.prototype.valueReturned = function (value) {
         console.log(value);

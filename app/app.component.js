@@ -16,7 +16,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "<h1>Con List</h1>\n  <input type='text' id='searchConList' />\n  <search-results></search-results>  \n  ",
+            template: "<h1>Con List</h1>\n  \n  <search-results></search-results>  \n  ",
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

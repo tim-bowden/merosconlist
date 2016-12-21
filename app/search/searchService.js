@@ -11,6 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 require('rxjs/add/operator/map');
+require('rxjs/add/operator/do');
+require('rxjs/add/operator/catch');
 var searchService = (function () {
     function searchService(_http) {
         this._http = _http;
@@ -21,9 +23,14 @@ var searchService = (function () {
         headers.append('api-key', '852613E36B77EB7E14B9D40E4FB46CF9');
         headers.append('Access-Control-Allow-Origin', '*');
         var requestOptions = new http_1.RequestOptions({ headers: headers });
-        var resp = this._http.get(this._searchUrl + q, requestOptions)
-            .map(function (response) { return response.json().value; });
-        return resp;
+        return this._http.get(this._searchUrl + q, requestOptions)
+            .map(function (response) { return response.json().value; })
+            .do(function (data) { return console.log("All: " + JSON.stringify(data)); })
+            .catch(this.handleError);
+    };
+    searchService.prototype.handleError = function (err, caught) {
+        console.log(err);
+        return caught;
     };
     searchService = __decorate([
         core_1.Injectable(), 

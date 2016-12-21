@@ -2,6 +2,8 @@
  import { Http, Response, Headers, RequestOptions } from '@angular/http';
  import { Observable } from 'rxjs/Observable';
  import 'rxjs/add/operator/map';
+ import 'rxjs/add/operator/do';
+  import 'rxjs/add/operator/catch';
 
  import { ISearchResult } from '../interfaces/ISearchResult'
 
@@ -23,12 +25,18 @@
 
             let requestOptions = new RequestOptions( {headers : headers} );
 
-            let resp : Observable<ISearchResult[]> = this._http.get(this._searchUrl + q, requestOptions)
-            .map((response: Response) => <ISearchResult[]>response.json().value);
+            return this._http.get(this._searchUrl + q, requestOptions)
+            .map((response: Response) => <ISearchResult[]>response.json().value)
+            .do(data => console.log("All: " + JSON.stringify(data)))
+            .catch(this.handleError);
 
-            return resp;
-               
+           
 
+     }
+
+     private handleError(err: any, caught: Observable<ISearchResult[]>): Observable<ISearchResult[]>{
+         console.log(err);
+         return caught;
      }
 
  }
