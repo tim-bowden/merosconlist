@@ -1,11 +1,13 @@
-<div class="container">
+<div class="row">
     <div class="input-group">
       <input type="text" id='searchConList' class="form-control" placeholder="Search Con List..." [(ngModel)]='searchTerm'>
       <span class="input-group-btn">
-        <button class="btn btn-default" type="button" (click)='search()'>Search</button>
+        <button class="btn btn-default" type="button" (click)='search()'><span class="glyphicon glyphicon-search" aria-hidden="true"></span>Search</button>
       </span>
     </div><!-- /input-group -->
     <hr class="half-rule" />
+</div>
+<div class="row">    
     <ul class="list-group">        
         <li class="list-group-item" *ngFor='let searchResult of results'>                    
             <h5>{{searchResult.Name6}}</h5> 
