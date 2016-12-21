@@ -15,11 +15,16 @@ var searchResults = (function () {
         this._searchService = _searchService;
         this.title = 'Testing Interpolation';
         this.searchTerm = '';
+        this.fuzzySearch = false;
     }
     searchResults.prototype.search = function () {
         var _this = this;
         if (this.searchTerm) {
-            this._searchService.getResults(this.searchTerm).subscribe(function (results) { return _this.results = results; }, this.errorReturned);
+            var luceneSearch = this.searchTerm;
+            if (this.fuzzySearch) {
+                luceneSearch += '~0';
+            }
+            this._searchService.getResults(luceneSearch).subscribe(function (results) { return _this.results = results; }, this.errorReturned);
         }
     };
     searchResults.prototype.ngOnInit = function () {

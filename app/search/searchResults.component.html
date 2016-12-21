@@ -3,8 +3,11 @@
       <input type="text" id='searchConList' class="form-control" placeholder="Search Con List..." [(ngModel)]='searchTerm'>
       <span class="input-group-btn">
         <button class="btn btn-default" type="button" (click)='search()'><span class="glyphicon glyphicon-search" aria-hidden="true"></span>Search</button>
-      </span>
+      </span>   
     </div><!-- /input-group -->
+    <div class="checkbox">
+        <label><input type="checkbox" [(ngModel)]='fuzzySearch'>Fuzzy Search</label>
+      </div>
     <hr class="half-rule" />
 </div>
 <div class="row">    

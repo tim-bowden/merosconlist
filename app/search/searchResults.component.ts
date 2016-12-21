@@ -14,10 +14,18 @@ export class searchResults implements OnInit{
     results : ISearchResult[];
     title : string = 'Testing Interpolation'
     searchTerm : string = ''
+    fuzzySearch  : boolean = false;
 
     search(){
         if (this.searchTerm){
-            this._searchService.getResults(this.searchTerm).subscribe(results => this.results = results, this.errorReturned);
+            
+            let luceneSearch : string = this.searchTerm;
+
+            if (this.fuzzySearch) {
+                luceneSearch += '~0';
+            }
+
+            this._searchService.getResults(luceneSearch).subscribe(results => this.results = results, this.errorReturned);
         }
         
     } 
