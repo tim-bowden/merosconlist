@@ -19,7 +19,7 @@ var searchResults = (function () {
     }
     searchResults.prototype.search = function () {
         var _this = this;
-        if (this.searchTerm) {
+        if (this.searchTerm && this.searchTerm.length > 0) {
             var luceneSearch = this.searchTerm;
             if (this.fuzzySearch) {
                 luceneSearch += '~0';

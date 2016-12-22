@@ -1,6 +1,6 @@
 <div class="row">
     <div class="input-group">
-      <input type="text" id='searchConList' class="form-control" placeholder="Search Con List..." [(ngModel)]='searchTerm'>
+      <input type="text" id='searchConList' class="form-control" placeholder="Search Con List..." [(ngModel)]='searchTerm' (keyUp.enter)="search()">
       <span class="input-group-btn">
         <button class="btn btn-default" type="button" (click)='search()'><span class="glyphicon glyphicon-search" aria-hidden="true"></span>Search</button>
       </span>   
@@ -13,10 +13,19 @@
 <div class="row">    
     <ul class="list-group">        
         <li class="list-group-item" *ngFor='let searchResult of results'>                    
-            <h5><strong>Group ID : {{searchResult.GroupID}}</strong></h5>
-            <h5>{{searchResult.Name6}}</h5> 
-            <p>{{searchResult.Name1}} {{searchResult.Name2}} {{searchResult.Name3}} {{searchResult.Name4}} {{searchResult.Name5}} </p>
-
+            
+            <div class="row">
+                <div class="col-sm-1"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></div>
+                <div class="col-sm-5"><h5><strong>Group ID : {{searchResult.GroupID}}</strong></h5></div>
+                <div class="col-sm-6"><h5>Group Type: {{searchResult.GroupType}}</h5></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5 col-sm-offset-1"><h5><strong>{{searchResult.Name6}}</strong></h5></div>
+                <div class="col-sm-6">{{searchResult.Name1}} {{searchResult.Name2}} {{searchResult.Name3}} {{searchResult.Name4}} {{searchResult.Name5}}</div>
+            </div>
+            
+            
+         
         </li>
     </ul>
 </div>

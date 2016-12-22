@@ -17,7 +17,7 @@ export class searchResults implements OnInit{
     fuzzySearch  : boolean = false;
 
     search(){
-        if (this.searchTerm){
+        if (this.searchTerm && this.searchTerm.length > 0){
             
             let luceneSearch : string = this.searchTerm;
 
