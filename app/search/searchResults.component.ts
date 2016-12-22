@@ -15,6 +15,7 @@ export class searchResults implements OnInit{
     title : string = 'Testing Interpolation'
     searchTerm : string = ''
     fuzzySearch  : boolean = false;
+    DLDistance : number = 0;
 
     search(){
         if (this.searchTerm && this.searchTerm.length > 0){
@@ -22,7 +23,7 @@ export class searchResults implements OnInit{
             let luceneSearch : string = this.searchTerm;
 
             if (this.fuzzySearch) {
-                luceneSearch += '~0';
+                luceneSearch += '~1';
             }
 
             this._searchService.getResults(luceneSearch).subscribe(results => this.results = results, this.errorReturned);
@@ -35,7 +36,7 @@ export class searchResults implements OnInit{
     }
 
     ngOnInit(){
-       this._searchService.getResults(this.searchTerm).subscribe(results => this.results = results, this.errorReturned)
+       this.search();
     }
 
     valueReturned(value : ISearchResult[]){

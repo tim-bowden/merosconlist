@@ -22,14 +22,13 @@ var searchResults = (function () {
         if (this.searchTerm && this.searchTerm.length > 0) {
             var luceneSearch = this.searchTerm;
             if (this.fuzzySearch) {
-                luceneSearch += '~0';
+                luceneSearch += '~1';
             }
             this._searchService.getResults(luceneSearch).subscribe(function (results) { return _this.results = results; }, this.errorReturned);
         }
     };
     searchResults.prototype.ngOnInit = function () {
-        var _this = this;
-        this._searchService.getResults(this.searchTerm).subscribe(function (results) { return _this.results = results; }, this.errorReturned);
+        this.search();
     };
     searchResults.prototype.valueReturned = function (value) {
         console.log(value);
