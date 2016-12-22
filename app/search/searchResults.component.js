@@ -16,6 +16,7 @@ var searchResults = (function () {
         this.title = 'Testing Interpolation';
         this.searchTerm = '';
         this.fuzzySearch = false;
+        this.DLDistance = 0;
     }
     searchResults.prototype.search = function () {
         var _this = this;
