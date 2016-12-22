@@ -6,8 +6,9 @@
       </span>   
     </div><!-- /input-group -->
     <div class="checkbox">
-        <label><input type="checkbox" [(ngModel)]='fuzzySearch'>Fuzzy Search</label>
-      </div>
+        <label><input type="checkbox" [(ngModel)]='fuzzySearch'>Fuzzy Search</label>        
+     </div>
+     <input type="range" [(ngModel)]='DLDistance' max="2" min="0" step="1" /><label>Fuzzy Distance</label>
     <hr class="half-rule" />
 </div>
 <div class="row">    

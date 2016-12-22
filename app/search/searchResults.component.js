@@ -23,7 +23,7 @@ var searchResults = (function () {
         if (this.searchTerm && this.searchTerm.length > 0) {
             var luceneSearch = this.searchTerm;
             if (this.fuzzySearch) {
-                luceneSearch += '~1';
+                luceneSearch += '~' + this.DLDistance.toString();
             }
             this._searchService.getResults(luceneSearch).subscribe(function (results) { return _this.results = results; }, this.errorReturned);
         }

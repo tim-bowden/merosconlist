@@ -23,7 +23,7 @@ export class searchResults implements OnInit{
             let luceneSearch : string = this.searchTerm;
 
             if (this.fuzzySearch) {
-                luceneSearch += '~1';
+                luceneSearch += '~' + this.DLDistance.toString();
             }
 
             this._searchService.getResults(luceneSearch).subscribe(results => this.results = results, this.errorReturned);
