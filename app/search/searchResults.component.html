@@ -5,12 +5,21 @@
         <button class="btn btn-default" type="button" (click)='search()'><span class="glyphicon glyphicon-search" aria-hidden="true"></span>Search</button>
       </span>   
     </div><!-- /input-group -->
-    <div class="checkbox">
-        <label><input type="checkbox" [(ngModel)]='fuzzySearch'>Fuzzy Search</label>        
-     </div>
-     <input type="range" [(ngModel)]='DLDistance' max="2" min="0" step="1" /><label>Fuzzy Distance</label>
-    <hr class="half-rule" />
 </div>
+<div class="row">
+    <div class="col-sm-2">
+        <div class="checkbox">
+            <label><input type="checkbox" [(ngModel)]='fuzzySearch'>Fuzzy Search</label>        
+        </div>
+    </div>
+    <div class="col-sm-8 text-right checkbox">
+        <label>Fuzzy Distance</label>
+    </div>
+    <div class="col-sm-2" style="padding-top:8px">
+     <input type="range" [(ngModel)]='DLDistance' max="2" min="0" step="1" />
+    </div>    
+</div>
+<hr class="half-rule" />
 <div class="row">    
     <ul class="list-group">        
         <li class="list-group-item" *ngFor='let searchResult of results'>                    
